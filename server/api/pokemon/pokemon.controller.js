@@ -68,7 +68,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of Pokemons
 export function index(req, res) {
-  return pokemon.card.where({ supertype: 'pokemon'})
+  return pokemon.card.where({ supertype: 'pokemon' , pageSize : 807})
 .then(cards => {
     console.log(cards); // "M Sceptile-EX"
     res.json(cards);

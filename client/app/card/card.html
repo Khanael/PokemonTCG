@@ -9,11 +9,14 @@
       <th scope="col">Type</th>
       <th scope="col">Image</th>
     </thead>
-<tr ng-repeat="Card in cardCtrl.test">
+<tr dir-paginate="Card in cardCtrl.test | orderBy:'nationalPokedexNumber' | itemsPerPage: 10 ">
   <td ng-bind="Card.nationalPokedexNumber"></td>
   <td ng-bind="Card.name"></td>
   <td ng-bind="Card.types"></td>
   <td><img ng-src="{{Card.imageUrl}}"></td>
 </tr>
   </table>
+
+  <dir-pagination-controls></dir-pagination-controls>
 </div>
+
